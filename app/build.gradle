@@ -1,13 +1,23 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group = 'hexlet.code'
 version = '1.0-SNAPSHOT'
 
+application {
+    mainClassName = 'hexlet.code.App'
+}
+
 repositories {
     mavenCentral()
 }
+
+compileJava {
+    options.release = 20
+}
+
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
