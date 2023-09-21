@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'checkstyle'
 }
 
 group = 'hexlet.code'
@@ -14,15 +15,14 @@ repositories {
     mavenCentral()
 }
 
-compileJava {
-    options.release = 20
-}
-
-
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.assertj:assertj-core:3.22.0'
     implementation 'info.picocli:picocli:4.7.5'
+    implementation 'org.json:json:20230618'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.2'
+
 }
 
 test {
