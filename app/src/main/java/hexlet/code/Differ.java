@@ -45,7 +45,7 @@ public class Differ {
                         result.append(" + " + i + ": " + after.get(i) + "\n");
                     }
                 });
-        result.append("}");
+        result.append("}\n");
 
         return result.toString();
     }
