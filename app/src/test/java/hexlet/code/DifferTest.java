@@ -1,6 +1,8 @@
 package hexlet.code;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 import java.io.IOException;
@@ -24,5 +26,13 @@ public class DifferTest {
     public void expectTest() throws IOException {
         String actual = Differ.generate("filepath1.json", "filepath2.json");
         assertThat(actual).isEqualTo(expect);
+    }
+
+    @Test
+    public void errorFakeFileTest() {
+        Throwable throwable = assertThrows(Exception.class, () -> {
+            Differ.generate("fakeFilepath1.json", "fakeFilepath2.json");
+        });
+        assertNotNull(throwable.getMessage());
     }
 }
