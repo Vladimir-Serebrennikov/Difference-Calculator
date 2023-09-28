@@ -23,7 +23,7 @@ public class Parser {
         mixed.putAll(data2);
 
         StringBuilder result = new StringBuilder();
-        result.append("{\n");
+        result.append("{ \n");
         mixed.keySet()
                 .forEach(key -> {
                     if (!data2.containsKey(key)) {
