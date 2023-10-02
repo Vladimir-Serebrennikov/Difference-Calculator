@@ -10,7 +10,8 @@ clean:
 	./gradlew clean
 
 build:
-	./gradlew clean build
+	./gradlew clean
+	./gradlew build
 
 install:
 	./gradlew clean install

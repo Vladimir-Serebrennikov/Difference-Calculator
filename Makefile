@@ -1,6 +1,6 @@
 run-dist:
 	./build/install/app/bin/app
-	
+
 .DEFAULT_GOAL := build-run
 
 setup:
@@ -10,11 +10,15 @@ clean:
 	./gradlew clean
 
 build:
-	./gradlew clean build
+	./gradlew clean
+	./gradlew build
 
 install:
 	./gradlew clean install
-	
+
+run-dist:
+	./build/install/java-package/bin/java-package
+
 run:
 	./gradlew run
 
