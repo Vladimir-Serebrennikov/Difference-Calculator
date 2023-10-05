@@ -1,12 +1,12 @@
 package hexlet.code;
 
-public final class LineDiff {
+public final class DiffClass {
     private String status;
     private String key;
     private Object value1;
     private Object value2;
 
-    LineDiff(String status, String key, Object value1, Object value2) {
+    DiffClass(String status, String key, Object value1, Object value2) {
         this.status = status;
         this.key = key;
         this.value1 = value1;

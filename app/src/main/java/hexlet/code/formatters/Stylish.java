@@ -1,9 +1,11 @@
-package hexlet.code;
+package hexlet.code.formatters;
+
+import hexlet.code.DiffClass;
 
 import java.util.Map;
 
 public final class Stylish {
-    public static String getFormatter(Map<String, LineDiff> data) {
+    public static String getFormatter(Map<String, DiffClass> data) {
         StringBuilder result = new StringBuilder("{\n");
         for (var item : data.entrySet()) {
             var status = item.getValue().getStatus();
