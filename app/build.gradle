@@ -23,6 +23,7 @@ dependencies {
     implementation 'info.picocli:picocli:4.7.5'
     implementation 'org.json:json:20230618'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.2'
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.15.2'
     implementation 'org.yaml:snakeyaml:1.29'
 }
 
