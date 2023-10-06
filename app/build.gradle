@@ -1,32 +1,39 @@
 plugins {
-    id 'java'
     id 'application'
     id 'checkstyle'
-    id 'jacoco'
     id 'com.adarshr.test-logger' version '3.0.0'
     id 'com.github.ben-manes.versions' version '0.39.0'
+    id 'jacoco'
 }
 
-group = 'hexlet.code'
-version = '1.0-SNAPSHOT'
-
-application {
-    mainClassName = 'hexlet.code.App'
-}
+group 'hexlet.code'
+version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
+compileJava {
+    options.release = 20
+}
+
+application {
+    mainClass = 'hexlet.code.App'
+}
+
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
     testImplementation 'org.assertj:assertj-core:3.22.0'
-    implementation 'info.picocli:picocli:4.7.5'
-    implementation 'org.json:json:20230618'
-    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.2'
-    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.15.2'
-    implementation 'org.yaml:snakeyaml:1.29'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    implementation 'info.picocli:picocli:4.7.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.1'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.2'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+}
+
+run {
+    standardInput = System.in
 }
 
 test {
