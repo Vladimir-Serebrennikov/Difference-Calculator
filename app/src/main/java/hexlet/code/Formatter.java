@@ -12,7 +12,7 @@ public final class Formatter {
             case "stylish" -> Stylish.getFormatter(data);
             case "plain" -> Plain.getFormatter(data);
             case "json" -> Json.getFormatter(data);
-            default -> throw new RuntimeException("Unknown format" + format);
+            default -> throw new RuntimeException("Unknown format " + format);
         };
     }
 
