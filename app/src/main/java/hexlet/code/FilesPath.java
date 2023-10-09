@@ -11,7 +11,7 @@ public final class FilesPath {
         String extension = filepath.split("\\.")[1];
         Path path = Paths.get(filepath).toAbsolutePath().normalize();
         String content = Files.readString(path);
-        return ParserSelection.getParser(extension, content);
+        return Parser.parseData(extension, content);
     }
 
 }
