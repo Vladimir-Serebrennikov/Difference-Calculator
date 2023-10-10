@@ -23,7 +23,7 @@ public class DifferBuild {
     public static List<Map<String, Object>> getDiffer(Map<String, Object> map1, Map<String, Object> map2) {
 
         List<String> allKeysSorted = getSortedKeysFromMaps(map1, map2);
-        List<Map<String, Object>> diffTree = new ArrayList<>();
+        List<Map<String, Object>> diff = new ArrayList<>();
 
         for (String key: allKeysSorted) {
 
@@ -44,10 +44,10 @@ public class DifferBuild {
                 map = getDiffMap(status, key, value);
             }
 
-            diffTree.add(map);
+            diff.add(map);
         }
 
-        return diffTree;
+        return diff;
     }
 
     public static Map<String, Object> getDiffMap(String status, String name, Object value1) {

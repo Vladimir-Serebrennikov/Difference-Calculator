@@ -23,7 +23,6 @@ public class Parser {
                 throw new RuntimeException(extension + " - not supported.");
         }
 
-        return mapper.readValue(content, new TypeReference<>() {});
-
+        return mapper.readValue(content, new TypeReference<>() { });
     }
 }
