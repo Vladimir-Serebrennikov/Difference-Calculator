@@ -1,17 +1,18 @@
 package hexlet.code.formatters;
 
-import hexlet.code.DiffClass;
+import hexlet.code.DifferBuild;
 
+import java.util.List;
 import java.util.Map;
 
 public final class Stylish {
-    public static String getFormatter(Map<String, DiffClass> data) {
+    public static String getFormatter(List<Map<String, Object>> data) {
         StringBuilder result = new StringBuilder("{\n");
-        for (var item : data.entrySet()) {
-            var status = item.getValue().getStatus();
-            var value1 = item.getValue().getValue1();
-            var value2 = item.getValue().getValue2();
-            var key = item.getValue().getKey();
+        for (Map<String, Object> item : data) {
+            var status = item.get(DifferBuild.KEY_STATUS).toString();
+            var value1 = item.get(DifferBuild.KEY_VALUE1);
+            var value2 = item.get(DifferBuild.KEY_VALUE2);
+            var key = item.get(DifferBuild.KEY_NAME);
             switch (status) {
                 case "changed" -> {
                     result.append("  - ");
